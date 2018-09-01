@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://staging3.meupoder.net/member/payment_selection.php" />
+<title>Payment Premium 1 mês CC Inter</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Payment Premium 1 mês CC Inter</td></tr>
+</thead><tbody>
+<!--While-->
+<tr>
+	<td>store</td>
+	<td>1</td>
+	<td>MyVar</td>
+</tr>
+<tr>
+	<td>while</td>
+	<td>storedVars.MyVar &lt;= 1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${MyVar}</td>
+	<td></td>
+</tr>
+<!--Variables section-->
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); day = data.getDate();</td>
+	<td>day</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); mes = data.getMonth()+1;</td>
+	<td>month</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); ano = data.getFullYear();</td>
+	<td>year</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); hora = data.getHours();</td>
+	<td>hours</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); min = data.getMinutes();</td>
+	<td>min</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); seg = data.getSeconds();</td>
+	<td>seg</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${day}-${month}-${year}-${hours}-${min}-${seg}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>C:\Users\Desktop\Google Drive\Meu Patrocinio\Automatizacao\MeuPatronicio\Evidencias\Payment\</td>
+	<td>evidencePath</td>
+</tr>
+<!--Reset previous navigation-->
+<!--MP-->
+<tr>
+	<td>open</td>
+	<td>https://staging3.meupoder.net/member/sign_in.php</td>
+	<td></td>
+</tr>
+<!--Login-->
+<tr>
+	<td>waitForVisible</td>
+	<td>id=form_2-login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=form_2-login</td>
+	<td>SugarDaddyM</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=form_2-login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=form_2-password</td>
+	<td>mp2016</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=form_2-process-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=form_2-process-button</td>
+	<td>mp2016</td>
+</tr>
+<!--Assinar-->
+<tr>
+	<td>waitForVisible</td>
+	<td>link=ASSINE</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=ASSINE</td>
+	<td></td>
+</tr>
+<!--Tipo de pagamento 1 mês Premium-->
+<tr>
+	<td>waitForVisible</td>
+	<td>css=div.select_option_class</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.select_option_class</td>
+	<td></td>
+</tr>
+<!--Payment Credit Card Internacional-->
+<tr>
+	<td>waitForVisible</td>
+	<td>css=#boleto_id1 &gt; a &gt; div.text-block</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#boleto_id1 &gt; a &gt; div.text-block</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>name=card.number</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=card.number</td>
+	<td>5311694105437951</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=input.wpwl-control.wpwl-control-expiry</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=input.wpwl-control.wpwl-control-expiry</td>
+	<td>12/19</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>name=card.holder</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=card.holder</td>
+	<td>JENNIFER MURRAY</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>name=card.cvv</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=card.cvv</td>
+	<td>566</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=button.wpwl-button.wpwl-button-pay</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.wpwl-button.wpwl-button-pay</td>
+	<td></td>
+</tr>
+<!--Confirmar Payement-->
+<tr>
+	<td>waitForVisible</td>
+	<td>css=div.success_message_class</td>
+	<td></td>
+</tr>
+<!--End While-->
+<tr>
+	<td>store</td>
+	<td>javascript{storedVars.MyVar++;}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>endWhile</td>
+	<td></td>
+	<td></td>
+</tr>
+<!--Finaliza Sessão-->
+
+</tbody></table>
+</body>
+</html>

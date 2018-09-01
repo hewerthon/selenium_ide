@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://beta.sodtechnologies.com/skadate/meupatricinio/" />
+<title>Remove-Users-Fakes</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Remove-Users-Fakes</td></tr>
+</thead><tbody>
+<!--Variables section-->
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); day = data.getDate();</td>
+	<td>day</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); mes = data.getMonth()+1;</td>
+	<td>month</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); ano = data.getFullYear();</td>
+	<td>year</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); hora = data.getHours();</td>
+	<td>hours</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); min = data.getMinutes();</td>
+	<td>min</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); seg = data.getSeconds();</td>
+	<td>seg</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>https://registration.meupatrocinio.com/</td>
+	<td>ambiente</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${day}-${month}-${year}-${hours}-${min}-${seg}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>C:\Users\Desktop\Google Drive\Meu Patrocinio\Automatizacao\MeuPatronicio\Evidencias</td>
+	<td>evidencePath</td>
+</tr>
+<!--Reset previous navigation-->
+<!--MP-->
+<!--Login-->
+<!--Profile Test-->
+<!--Diretorio de arquivos-->
+<tr>
+	<td>loadTestData</td>
+	<td>file:///C:\Users\Hewerthon\Google Drive\Meu Patrocinio\Automatizacao\Profiles-Fakes.xml</td>
+	<td></td>
+</tr>
+<!--Inicio While-->
+<tr>
+	<td>while</td>
+	<td>!testdata.EOF()</td>
+	<td></td>
+</tr>
+<tr>
+	<td>nextTestData</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${Profile}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>selenium.browserbot.getCurrentWindow().scrollTo(0,800)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=add_to_fake_user_list</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=add_to_fake_user_list</td>
+	<td></td>
+</tr>
+<!--Send Msg-->
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<!--Final While-->
+<tr>
+	<td>endWhile</td>
+	<td></td>
+	<td></td>
+</tr>
+<!--Evidencia-->
+<tr>
+	<td>captureEntirePageScreenshot</td>
+	<td>${evidencePath}Chat-${year}-${month}-${day}-${hours}-${min}-${seg}.png</td>
+	<td></td>
+</tr>
+<!--Menu Profile-->
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;thumb&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>css=img[alt=&quot;thumb&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=img[alt=&quot;thumb&quot;]</td>
+	<td></td>
+</tr>
+<!--Finalizar Sessão-->
+<tr>
+	<td>waitForVisible</td>
+	<td>link=Terminar Sessão</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>link=Terminar Sessão</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Terminar Sessão</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

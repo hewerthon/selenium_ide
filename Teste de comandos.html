@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://dating.meupatrocinio.com/admin/" />
+<title>Testes de comandos</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Testes de comandos</td></tr>
+</thead><tbody>
+<tr>
+	<td>storeBodyText</td>
+	<td>TextoPage</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${TextoPage}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>No info about profile </td>
+	<td>PerfilDeletado</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${PerfilDeletado}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['TextoPage']!==storedVars['PerfilDeletado']</td>
+	<td>JUMPDELETED</td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>JUMPDELETED</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifySelectedLabel</td>
+	<td>id=profile_status</td>
+	<td>deleted</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>ProfileDeleted</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['CurrentMembership']!==storedVars['VerifySDG']</td>
+	<td>JUMPNEXT</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=profile_status</td>
+	<td>label=deleted</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${teste}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseDown</td>
+	<td>id=jump_to_members_page</td>
+	<td>25,25</td>
+</tr>
+<tr>
+	<td>mouseMoveAt</td>
+	<td>id=jump_to_members_page</td>
+	<td>25,25</td>
+</tr>
+<tr>
+	<td>shiftKeyDown</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=jump_to_members_page</td>
+	<td>\12</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>selenium.browserbot.getCurrentWindow().scrollTo(0,700)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=body</td>
+	<td>Noinfo</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>No info about profile</td>
+	<td>Info</td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['Noinfo']!==storedVars['Info']</td>
+	<td>JUMPNEXT3</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=div.block.center_block &gt; div.block_body &gt; div.block_body_r &gt; div.block_body_c.clearfix</td>
+	<td>Suspend</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>A sua Conta de Membro foi suspensa pelo Administrador.</td>
+	<td>Admin</td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['Deleted']==storedVars['Iniciar']</td>
+	<td>JUMPNEXT5</td>
+</tr>
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://beta.sodtechnologies.com/skadate/meupatricinio/" />
+<title>Sign-SB-M-HM</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Sign-SB-M-HM</td></tr>
+</thead><tbody>
+<!--Variables section-->
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); day = data.getDate();</td>
+	<td>day</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); mes = data.getMonth()+1;</td>
+	<td>month</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); ano = data.getFullYear();</td>
+	<td>year</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); hora = data.getHours();</td>
+	<td>hours</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); min = data.getMinutes();</td>
+	<td>min</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); seg = data.getSeconds();</td>
+	<td>seg</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${day}-${month}-${year}-${hours}-${min}-${seg}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>C:\Users\hewerthon\OneDrive\Empregos\Meu patrocinio\Automatização\Meu Patronicio\Evidencias\Sign\</td>
+	<td>evidencePath</td>
+</tr>
+<!--Reset previous navigation-->
+<tr>
+	<td>deleteAllVisibleCookies</td>
+	<td></td>
+	<td></td>
+</tr>
+<!--MP-->
+<tr>
+	<td>open</td>
+	<td>https://dating.meupatrocinio.com/member/terms.php</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Accept term-->
+<tr>
+	<td>waitForVisible</td>
+	<td>css=span &gt; div.agreement_checks &gt; span.input-setting-space &gt; #agree</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span &gt; div.agreement_checks &gt; span.input-setting-space &gt; #agree</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=span &gt; div.agreement_checks &gt; span.cont-join-block &gt; #continue_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span &gt; div.agreement_checks &gt; span.cont-join-block &gt; #continue_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Crie sua conta-->
+<tr>
+	<td>waitForVisible</td>
+	<td>id=form_2-email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=form_2-email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=form_2-email</td>
+	<td>hewerthon.teste${min}@mailinator.com</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=form_2-re_email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=form_2-re_email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=form_2-re_email</td>
+	<td>hewerthon.teste${min}@mailinator.com</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=form_2-password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=form_2-password</td>
+	<td>123456</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=form_2-re_password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=form_2-re_password</td>
+	<td>123456</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>name=birthdate[day]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=birthdate[day]</td>
+	<td>label=3</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>name=birthdate[month]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=birthdate[month]</td>
+	<td>label=Fevereiro</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>name=birthdate[month]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=birthdate[year]</td>
+	<td>label=1996</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=form_2-sex</td>
+	<td>label=Masculino</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=li.list_label.what_value_2 &gt; label &gt; input[name=&quot;what&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=match_sex[]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=li.list_label.match_sex_value_8 &gt; label &gt; input[name=&quot;match_sex[]&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=form_2-select_one</td>
+	<td>label=Televisão</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=form_2-action_1___-button</td>
+	<td></td>
+</tr>
+<!--Confirmar Profile Type-->
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=form_2-action_2___1-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=form_2-action_2___1-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Sobre Você-->
+<tr>
+	<td>waitForVisible</td>
+	<td>id=test_country</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>name=location[state_id]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=location[state_id]</td>
+	<td>label=Sao Paulo</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>name=location[city_id]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=location[city_id]</td>
+	<td>label=São Paulo</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=form_2-height1</td>
+	<td>label=170 cm</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=form_2-body_type</td>
+	<td>label=Magro</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=form_2-ethnicity</td>
+	<td>label=Branco / Caucasiano</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=form_2-hair_color</td>
+	<td>label=Castanho</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=form_2-eye_color</td>
+	<td>label=Castanho Claro</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=form_2-smoke</td>
+	<td>label=Nunca</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=form_2-drink</td>
+	<td>label=Socialmente</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=form_2-relationship</td>
+	<td>label=Solteiro(a)</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=form_2-have_children</td>
+	<td>label=Não</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=form_2-education</td>
+	<td>label=Superior completo</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=form_2-occupation</td>
+	<td>label=Consultor</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=form_2-action_3___1-button</td>
+	<td></td>
+</tr>
+<!--O seu perfil-->
+<tr>
+	<td>waitForVisible</td>
+	<td>id=form_2-username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=form_2-username</td>
+	<td>Teste${min}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=form_2-headline</td>
+	<td>Teste MP</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=form_2-general_description</td>
+	<td>Teste MP</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=form_2-happy_to_travel</td>
+	<td>label=Mundo Inteiro</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=form_2-lifestyle_budget</td>
+	<td>label=Negociável</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=form_2-description</td>
+	<td>Teste MP</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=form_2-action_4___1-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=userfile_input</td>
+	<td></td>
+</tr>
+<tr>
+	<td>typeAndWait</td>
+	<td>id=userfile_input</td>
+	<td>C:\Users\hewerthon\OneDrive\Empregos\Meu patrocinio\Atividades\Acer 100%.png</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=form_2-action_5___1-button</td>
+	<td></td>
+</tr>
+<!--Finaliza Sessão-->
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;thumb&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>css=img[alt=&quot;thumb&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=img[alt=&quot;thumb&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>link=Terminar Sessão</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>link=Terminar Sessão</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Terminar Sessão</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

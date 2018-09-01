@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://dating.meupatrocinio.com/admin/" />
+<title>Verify SD send MSG</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Verify SD send MSG</td></tr>
+</thead><tbody>
+<!--Variables section-->
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); day = data.getDate();</td>
+	<td>day</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); mes = data.getMonth()+1;</td>
+	<td>month</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); ano = data.getFullYear();</td>
+	<td>year</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); hora = data.getHours();</td>
+	<td>hours</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); min = data.getMinutes();</td>
+	<td>min</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); seg = data.getSeconds();</td>
+	<td>seg</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${day}-${month}-${year}-${hours}-${min}-${seg}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>C:\Users\Hewerthon\Google Drive\Meu Patrocinio\Automatizacao\MeuPatronicio\Evidencias\ProfileHopping\</td>
+	<td>evidencePath</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>Premium</td>
+	<td>VerifyPremium</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>No info about profile</td>
+	<td>Info</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${VerifyPremium}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>Sugar Baby</td>
+	<td>VerifySB</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${VerifySB}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>Sugar Daddy Gratuito</td>
+	<td>VerifySDG</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${VerifySDG}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>active</td>
+	<td>CheckStatus</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${CheckStatus}</td>
+	<td></td>
+</tr>
+<!--Evidence-->
+<tr>
+	<td>captureEntirePageScreenshot</td>
+	<td>${evidencePath}Profile-Hopping-${year}-${month}-${day}-${hours}-${min}-${seg}.png</td>
+	<td></td>
+</tr>
+<!--Diretorio de arquivos-->
+<tr>
+	<td>loadTestData</td>
+	<td>file:///C:\Users\Hewerthon\Google Drive\Meu Patrocinio\Automatizacao\Premium send MSG.xml</td>
+	<td></td>
+</tr>
+<!--Loop Profiles-->
+<tr>
+	<td>while</td>
+	<td>!testdata.EOF()	</td>
+	<td></td>
+</tr>
+<tr>
+	<td>nextTestData</td>
+	<td></td>
+	<td></td>
+</tr>
+<!--MP Adm Profiles-->
+<tr>
+	<td>open</td>
+	<td>${Profile}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>selenium.browserbot.getCurrentWindow().scrollTo(0,850)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=jump_to_members_page</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=jump_to_members_page</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
+</tr>
+<!--Perto de Mim-->
+<!--Primeira Pagina -->
+<!--Abrir perfil para enviar MSG-->
+<tr>
+	<td>open</td>
+	<td>https://dating.meupatrocinio.com/member/profile.php?profile_id=269618</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=cmp12-send_message_link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=cmp12-send_message_link</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=form_2-text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>id=form_2-text</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=form_2-text</td>
+	<td>Teste MP</td>
+</tr>
+<!--Send MSG-->
+<tr>
+	<td>waitForVisible</td>
+	<td>id=form_2-send-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=form_2-send-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>refresh</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//*[@id='cmp1']/div[4]/div/div[2]/div[1]/ul/li[2]/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=.//*[@id='cmp1']/div[4]/div/div[2]/div[1]/ul/li[2]/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
+</tr>
+<!--Mensagens-->
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//*[@id='form_2']/table/tbody/tr[1]/td[2]/a/div/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=.//*[@id='form_2']/table/tbody/tr[1]/td[2]/a/div/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${Profile}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>captureEntirePageScreenshot</td>
+	<td>${evidencePath}Sent-MSG-${profile}.png</td>
+	<td></td>
+</tr>
+<!--Delete MSG-->
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//*[@id='cmp11']/div[1]/div/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=.//*[@id='cmp11']/div[1]/div/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=input..firepath-matching-node</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input..firepath-matching-node</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${Profile}</td>
+	<td></td>
+</tr>
+<!--End While-->
+<tr>
+	<td>endWhile</td>
+	<td></td>
+	<td></td>
+</tr>
+<!--Evidence-->
+<tr>
+	<td>captureEntirePageScreenshot</td>
+	<td>${evidencePath}Profile-Hopping-${year}-${month}-${day}-${hours}-${min}-${seg}.png</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

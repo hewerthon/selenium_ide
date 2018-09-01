@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://beta.sodtechnologies.com/skadate/meupatricinio/" />
+<title>Sign-SD-H</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Sign-SD-H</td></tr>
+</thead><tbody>
+<!--While-->
+<tr>
+	<td>store</td>
+	<td>1</td>
+	<td>MyVar</td>
+</tr>
+<tr>
+	<td>while</td>
+	<td>storedVars.MyVar &lt;= 1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${MyVar}</td>
+	<td></td>
+</tr>
+<!--Variables section-->
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); day = data.getDate();</td>
+	<td>day</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); mes = data.getMonth()+1;</td>
+	<td>month</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); ano = data.getFullYear();</td>
+	<td>year</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); hora = data.getHours();</td>
+	<td>hours</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); min = data.getMinutes();</td>
+	<td>min</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); seg = data.getSeconds();</td>
+	<td>seg</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${year}-${month}-${day}-${hours}-${min}-${seg}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>https://registration.meupatrocinio.com/</td>
+	<td>ambiente</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${ambiente}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>hewerthonteste${year}${month}${day}${hours}${min}${seg}@mailinator.com</td>
+	<td>email</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${email}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>mp2016</td>
+	<td>senha</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${senha}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>HewerthonTeste${year}${month}${day}${hours}${min}${seg}</td>
+	<td>username</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${username}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>Teste MP&nbsp;&nbsp;:-) =) :D :x =O 😀 💙 😈 😂 😋 </td>
+	<td>texto</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${texto}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>C:\Users\Hewerthon\Google Drive\Meu Patrocinio\Atividades\Fotos\Artistas\Homens\Angelina Jolie 6.jpg</td>
+	<td>foto</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${foto}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>C:\Users\Hewerthon\Google Drive\Meu Patrocinio\Automatizacao\MeuPatronicio\Evidencias\Sign\</td>
+	<td>evidencePath</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${evidencePath}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>Profile-Hopping-${year}-${month}-${day}-${hours}-${min}-${seg}.png</td>
+	<td>evidenceName</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${evidenceName}</td>
+	<td></td>
+</tr>
+<!--Reset previous navigation-->
+<tr>
+	<td>deleteAllVisibleCookies</td>
+	<td></td>
+	<td></td>
+</tr>
+<!--MP-->
+<tr>
+	<td>open</td>
+	<td>${ambiente}</td>
+	<td></td>
+</tr>
+<!--Accept term-->
+<tr>
+	<td>waitForVisible</td>
+	<td>id=agree</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=agree</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=agree_btn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=agree_btn</td>
+	<td></td>
+</tr>
+<!--Crie sua conta-->
+<tr>
+	<td>waitForVisible</td>
+	<td>id=email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=email</td>
+	<td>${email}</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=re_email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=re_email</td>
+	<td>${email}</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password</td>
+	<td>${senha}</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=re_password</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=re_password</td>
+	<td>${senha}</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=nascimento</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=nascimento</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=9</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=sex</td>
+	<td>label=Feminino</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=extended[what]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=match_sex[]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=select_one</td>
+	<td>label=Televisão</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[2]</td>
+	<td></td>
+</tr>
+<!--Confirmar Profile Type-->
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=(//button[@type='button'])[4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[4]</td>
+	<td></td>
+</tr>
+<!--Sobre Você-->
+<tr>
+	<td>waitForVisible</td>
+	<td>id=state_id</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=state_id</td>
+	<td>label=Sao Paulo</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=city_id</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=city_id</td>
+	<td>label=São Paulo</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=height1</td>
+	<td>label=170 cm</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=body_type</td>
+	<td>label=Magro</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=ethnicity</td>
+	<td>label=Branco / Caucasiano</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=hair_color</td>
+	<td>label=Castanho</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=eye_color</td>
+	<td>label=Castanho Claro</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=smoke</td>
+	<td>label=Nunca</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=drink</td>
+	<td>label=Socialmente</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=relationship</td>
+	<td>label=Solteiro(a)</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=have_children</td>
+	<td>label=Não</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=education</td>
+	<td>label=Superior completo</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=occupation</td>
+	<td>label=Consultor</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=income</td>
+	<td>label=R$10.000 ou menos</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=net_worth</td>
+	<td>label=Menos que R$100.000</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[6]</td>
+	<td></td>
+</tr>
+<!--O seu perfil-->
+<tr>
+	<td>waitForVisible</td>
+	<td>id=username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td>${username}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=headline</td>
+	<td>${texto}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=general_description</td>
+	<td>${texto}</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=happy_to_travel</td>
+	<td>label=Mundo Inteiro</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=lifestyle_budget</td>
+	<td>label=Negociável</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=description</td>
+	<td>${texto}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[8]</td>
+	<td></td>
+</tr>
+<!--Carregar Foto-->
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img.img-responsive.one</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=one</td>
+	<td>${foto}</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[10]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<!--Verifica sucesso-->
+<tr>
+	<td>waitForVisible</td>
+	<td>css=div.resend-email &gt; div &gt; h4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=#success_mail &gt; p</td>
+	<td></td>
+</tr>
+<!--End While-->
+<tr>
+	<td>store</td>
+	<td>javascript{storedVars.MyVar++;}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>endWhile</td>
+	<td></td>
+	<td></td>
+</tr>
+<!--Finaliza Sessão-->
+</tbody></table>
+</body>
+</html>
