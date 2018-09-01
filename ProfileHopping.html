@@ -1,0 +1,1135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://dating.meupatrocinio.com/admin/" />
+<title>ProfileHopping</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">ProfileHopping</td></tr>
+</thead><tbody>
+<!--Variables section-->
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); day = data.getDate();</td>
+	<td>day</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); mes = data.getMonth()+1;</td>
+	<td>month</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); ano = data.getFullYear();</td>
+	<td>year</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); hora = data.getHours();</td>
+	<td>hours</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); min = data.getMinutes();</td>
+	<td>min</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); seg = data.getSeconds();</td>
+	<td>seg</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${day}-${month}-${year}-${hours}-${min}-${seg}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>https://dating.meupatrocinio.com/admin/profile.php?profile_id=</td>
+	<td>Ambiente</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>C:\Users\Hewerthon\Google Drive\Meu Patrocinio\Automatizacao\MeuPatronicio\Evidencias\ProfileHopping\</td>
+	<td>evidencePath</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>Premium</td>
+	<td>VerifyPremium</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>No info about profile</td>
+	<td>Info</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${VerifyPremium}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>Sugar Baby</td>
+	<td>VerifySB</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${VerifySB}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>Sugar Daddy Gratuito</td>
+	<td>VerifySDG</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${VerifySDG}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>active</td>
+	<td>CheckStatus</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${CheckStatus}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>https://mixpanel.com/optout/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=label.message</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3500</td>
+	<td></td>
+</tr>
+<!--Evidence-->
+<tr>
+	<td>captureEntirePageScreenshot</td>
+	<td>${evidencePath}Profile-Hopping-${year}-${month}-${day}-${hours}-${min}-${seg}.png</td>
+	<td></td>
+</tr>
+<!--Diretorio de arquivos-->
+<tr>
+	<td>loadTestData</td>
+	<td>file:///C:\Users\Hewerthon\Google Drive\Meu Patrocinio\Automatizacao\Profiles.xml</td>
+	<td></td>
+</tr>
+<!--Loop Profiles-->
+<tr>
+	<td>while</td>
+	<td>!testdata.EOF()	</td>
+	<td></td>
+</tr>
+<tr>
+	<td>nextTestData</td>
+	<td></td>
+	<td></td>
+</tr>
+<!--MP Adm Profiles-->
+<tr>
+	<td>open</td>
+	<td>${Ambiente}${Profile}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>selenium.browserbot.getCurrentWindow().scrollTo(0,700)</td>
+	<td></td>
+</tr>
+<!--Verificação do membro Active-->
+<tr>
+	<td>waitForVisible</td>
+	<td>id=main_label_profile_status</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>id=main_label_profile_status</td>
+	<td>Status</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${Status}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['Status']!==storedVars['CheckStatus']</td>
+	<td>JUMPNEXT</td>
+</tr>
+<!--Verificação do membro No info-->
+<tr>
+	<td>storeText</td>
+	<td>css=body</td>
+	<td>Noinfo</td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['Noinfo']==storedVars['Info']</td>
+	<td>JUMPNEXT</td>
+</tr>
+<!--Verificação do membro Gratuito-->
+<tr>
+	<td>waitForVisible</td>
+	<td>//div[@id='content']/table/tbody/tr/td[2]/table[2]/tbody/tr[2]/td[2]/table[3]/tbody/tr/td[2]/b</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>//div[@id='content']/table/tbody/tr/td[2]/table[2]/tbody/tr[2]/td[2]/table[3]/tbody/tr/td[2]/b</td>
+	<td>CurrentMembership</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${CurrentMembership}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['CurrentMembership']!==storedVars['VerifySDG']</td>
+	<td>JUMPNEXT</td>
+</tr>
+<tr>
+	<td>gotolabel</td>
+	<td>CONTINUE</td>
+	<td></td>
+</tr>
+<!--Verificação do membro Premium-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['CurrentMembership']!==storedVars['VerifyPremium']</td>
+	<td>JUMPNEXT</td>
+</tr>
+<!--Verificação do membro SB Free-->
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['CurrentMembership']!==storedVars['VerifySB']</td>
+	<td>JUMPNEXT</td>
+</tr>
+<!--Go to Profile-->
+<tr>
+	<td>label</td>
+	<td>CONTINUE</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>selenium.browserbot.getCurrentWindow().scrollTo(0,850)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=jump_to_members_page</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=jump_to_members_page</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<!--Perto de Mim-->
+<!--Primeira Pagina -->
+<!--Member 1º  Perto de mim Primeira Pagina -->
+<tr>
+	<td>open</td>
+	<td>https://dating.meupatrocinio.com/member/location_list.php?mode=state&amp;distance=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeElementPresent</td>
+	<td>link=3</td>
+	<td>Page3</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${Page3}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['Page3']!==true</td>
+	<td>JUMPNEWMEMBERS</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//*[@id='cmp11']/div[3]/div[1]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=.//*[@id='cmp11']/div[3]/div[1]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//div[@id='httpdoc-dd_area']/div/div[2]/div/div/div/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${Profile}</td>
+	<td></td>
+</tr>
+<!--Member 2º Perto de mim Primeira Pagina -->
+<tr>
+	<td>open</td>
+	<td>https://dating.meupatrocinio.com/member/location_list.php?mode=state&amp;distance=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>link=Perto de mim</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//*[@id='cmp11']/div[3]/div[6]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=.//*[@id='cmp11']/div[3]/div[6]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//div[@id='httpdoc-dd_area']/div/div[2]/div/div/div/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${Profile}</td>
+	<td></td>
+</tr>
+<!--Member 3º Perto de mim Primeira Pagina -->
+<tr>
+	<td>open</td>
+	<td>https://dating.meupatrocinio.com/member/location_list.php?mode=state&amp;distance=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>link=Perto de mim</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//*[@id='cmp11']/div[3]/div[11]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=.//*[@id='cmp11']/div[3]/div[11]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//div[@id='httpdoc-dd_area']/div/div[2]/div/div/div/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${Profile}</td>
+	<td></td>
+</tr>
+<!--Member 4º Perto de mim Primeira Pagina -->
+<tr>
+	<td>open</td>
+	<td>https://dating.meupatrocinio.com/member/location_list.php?mode=state&amp;distance=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>selenium.browserbot.getCurrentWindow().scrollTo(0,500)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>link=Perto de mim</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//*[@id='cmp11']/div[3]/div[16]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=.//*[@id='cmp11']/div[3]/div[16]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//div[@id='httpdoc-dd_area']/div/div[2]/div/div/div/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${Profile}</td>
+	<td></td>
+</tr>
+<!--Member 5º Perto de mim Primeira Pagina -->
+<tr>
+	<td>open</td>
+	<td>https://dating.meupatrocinio.com/member/location_list.php?mode=state&amp;distance=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>link=Perto de mim</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//*[@id='cmp11']/div[3]/div[21]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=.//*[@id='cmp11']/div[3]/div[21]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//div[@id='httpdoc-dd_area']/div/div[2]/div/div/div/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${Profile}</td>
+	<td></td>
+</tr>
+<!--Segunda Pagina -->
+<!--Member 6º Perto de mim Segunda Pagina -->
+<tr>
+	<td>open</td>
+	<td>https://dating.meupatrocinio.com/member/location_list.php?mode=state&amp;distance=1&amp;page=2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>link=Perto de mim</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//*[@id='cmp11']/div[3]/div[1]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=.//*[@id='cmp11']/div[3]/div[1]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//div[@id='httpdoc-dd_area']/div/div[2]/div/div/div/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${Profile}</td>
+	<td></td>
+</tr>
+<!--Member 7º Perto de mim Segunda Pagina -->
+<tr>
+	<td>open</td>
+	<td>https://dating.meupatrocinio.com/member/location_list.php?mode=state&amp;distance=1&amp;page=2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>link=Perto de mim</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//*[@id='cmp11']/div[3]/div[6]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=.//*[@id='cmp11']/div[3]/div[6]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//div[@id='httpdoc-dd_area']/div/div[2]/div/div/div/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${Profile}</td>
+	<td></td>
+</tr>
+<!--Member 8º Perto de mim Segunda Pagina -->
+<tr>
+	<td>open</td>
+	<td>https://dating.meupatrocinio.com/member/location_list.php?mode=state&amp;distance=1&amp;page=2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>link=Perto de mim</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//*[@id='cmp11']/div[3]/div[11]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=.//*[@id='cmp11']/div[3]/div[11]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//div[@id='httpdoc-dd_area']/div/div[2]/div/div/div/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${Profile}</td>
+	<td></td>
+</tr>
+<!--Member 9º Perto de mim Segunda Pagina -->
+<tr>
+	<td>open</td>
+	<td>https://dating.meupatrocinio.com/member/location_list.php?mode=state&amp;distance=1&amp;page=2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>selenium.browserbot.getCurrentWindow().scrollTo(0,500)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>link=Perto de mim</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//*[@id='cmp11']/div[3]/div[16]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=.//*[@id='cmp11']/div[3]/div[16]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//div[@id='httpdoc-dd_area']/div/div[2]/div/div/div/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${Profile}</td>
+	<td></td>
+</tr>
+<!--Member 10º Perto de mim Segunda Pagina -->
+<tr>
+	<td>open</td>
+	<td>https://dating.meupatrocinio.com/member/location_list.php?mode=state&amp;distance=1&amp;page=2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>link=Perto de mim</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//*[@id='cmp11']/div[3]/div[21]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=.//*[@id='cmp11']/div[3]/div[21]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//div[@id='httpdoc-dd_area']/div/div[2]/div/div/div/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${Profile}</td>
+	<td></td>
+</tr>
+<!--Membros Novos-->
+<!--Primeira Pagina -->
+<!--Member 1º Membros Novos Primeira Pagina -->
+<tr>
+	<td>label</td>
+	<td>JUMPNEWMEMBERS</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>https://dating.meupatrocinio.com/member/new_members_list.php</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>link=Membros Novos</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//*[@id='httpdoc']/div[3]/div[1]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=.//*[@id='httpdoc']/div[3]/div[1]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//div[@id='httpdoc-dd_area']/div/div[2]/div/div/div/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${Profile}</td>
+	<td></td>
+</tr>
+<!--Member 2º Membros Novos Primeira Pagina -->
+<tr>
+	<td>open</td>
+	<td>https://dating.meupatrocinio.com/member/new_members_list.php</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>link=Membros Novos</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//*[@id='httpdoc']/div[3]/div[6]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=.//*[@id='httpdoc']/div[3]/div[6]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//div[@id='httpdoc-dd_area']/div/div[2]/div/div/div/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${Profile}</td>
+	<td></td>
+</tr>
+<!--Member 3º Membros Novos Primeira Pagina -->
+<tr>
+	<td>open</td>
+	<td>https://dating.meupatrocinio.com/member/new_members_list.php</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>link=Membros Novos</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//*[@id='httpdoc']/div[3]/div[11]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=.//*[@id='httpdoc']/div[3]/div[11]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//div[@id='httpdoc-dd_area']/div/div[2]/div/div/div/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${Profile}</td>
+	<td></td>
+</tr>
+<!--Member 4º Membros Novos Primeira Pagina -->
+<tr>
+	<td>open</td>
+	<td>https://dating.meupatrocinio.com/member/new_members_list.php</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>selenium.browserbot.getCurrentWindow().scrollTo(0,500)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>link=Membros Novos</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//*[@id='httpdoc']/div[3]/div[16]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=.//*[@id='httpdoc']/div[3]/div[16]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//div[@id='httpdoc-dd_area']/div/div[2]/div/div/div/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${Profile}</td>
+	<td></td>
+</tr>
+<!--Member 5º Membros Novos Primeira Pagina -->
+<tr>
+	<td>open</td>
+	<td>https://dating.meupatrocinio.com/member/new_members_list.php</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>link=Membros Novos</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//*[@id='httpdoc']/div[3]/div[21]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=.//*[@id='httpdoc']/div[3]/div[21]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//div[@id='httpdoc-dd_area']/div/div[2]/div/div/div/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${Profile}</td>
+	<td></td>
+</tr>
+<!--Segunda Pagina -->
+<!--Member 6º Membros Novos Segunda Pagina-->
+<tr>
+	<td>open</td>
+	<td>https://dating.meupatrocinio.com/member/new_members_list.php?page=2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>link=Membros Novos</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//*[@id='httpdoc']/div[3]/div[1]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=.//*[@id='httpdoc']/div[3]/div[1]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//div[@id='httpdoc-dd_area']/div/div[2]/div/div/div/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${Profile}</td>
+	<td></td>
+</tr>
+<!--Member 7º Membros Novos Segunda Pagina-->
+<tr>
+	<td>open</td>
+	<td>https://dating.meupatrocinio.com/member/new_members_list.php?page=2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>link=Membros Novos</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//*[@id='httpdoc']/div[3]/div[6]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=.//*[@id='httpdoc']/div[3]/div[6]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//div[@id='httpdoc-dd_area']/div/div[2]/div/div/div/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${Profile}</td>
+	<td></td>
+</tr>
+<!--Member 8º Membros Novos Segunda Pagina-->
+<tr>
+	<td>open</td>
+	<td>https://dating.meupatrocinio.com/member/new_members_list.php?page=2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>link=Membros Novos</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//*[@id='httpdoc']/div[3]/div[11]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=.//*[@id='httpdoc']/div[3]/div[11]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//div[@id='httpdoc-dd_area']/div/div[2]/div/div/div/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${Profile}</td>
+	<td></td>
+</tr>
+<!--Member 9º Membros Novos Segunda Pagina-->
+<tr>
+	<td>open</td>
+	<td>https://dating.meupatrocinio.com/member/new_members_list.php?page=2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>selenium.browserbot.getCurrentWindow().scrollTo(0,500)</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>link=Membros Novos</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//*[@id='httpdoc']/div[3]/div[16]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=.//*[@id='httpdoc']/div[3]/div[16]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//div[@id='httpdoc-dd_area']/div/div[2]/div/div/div/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${Profile}</td>
+	<td></td>
+</tr>
+<!--Member 10º Membros Novos Segunda Pagina-->
+<tr>
+	<td>open</td>
+	<td>https://dating.meupatrocinio.com/member/new_members_list.php?page=2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>link=Membros Novos</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//*[@id='httpdoc']/div[3]/div[21]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=.//*[@id='httpdoc']/div[3]/div[21]/div/div[1]/div/div/div[1]/a/img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=.//div[@id='httpdoc-dd_area']/div/div[2]/div/div/div/div[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>label</td>
+	<td>JUMPNEXT</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${Profile}</td>
+	<td></td>
+</tr>
+<!--End While-->
+<tr>
+	<td>endWhile</td>
+	<td></td>
+	<td></td>
+</tr>
+<!--Evidence-->
+<tr>
+	<td>captureEntirePageScreenshot</td>
+	<td>${evidencePath}Profile-Hopping-${year}-${month}-${day}-${hours}-${min}-${seg}.png</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

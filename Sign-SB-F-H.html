@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://beta.sodtechnologies.com/skadate/meupatricinio/" />
+<title>Sign-SB-MH</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Sign-SB-MH</td></tr>
+</thead><tbody>
+<!--While-->
+<tr>
+	<td>store</td>
+	<td>1</td>
+	<td>MyVar</td>
+</tr>
+<tr>
+	<td>while</td>
+	<td>storedVars.MyVar &lt;= 3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${MyVar}</td>
+	<td></td>
+</tr>
+<!--Variables section-->
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); day = data.getDate();</td>
+	<td>day</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); mes = data.getMonth()+1;</td>
+	<td>month</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); ano = data.getFullYear();</td>
+	<td>year</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); hora = data.getHours();</td>
+	<td>hours</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); min = data.getMinutes();</td>
+	<td>min</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); seg = data.getSeconds();</td>
+	<td>seg</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${day}-${month}-${year}-${hours}-${min}-${seg}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>C:\Users\Desktop\Google Drive\Meu Patrocinio\Automatizacao\MeuPatronicio\Evidencias\Sign\</td>
+	<td>evidencePath</td>
+</tr>
+<!--Reset previous navigation-->
+<tr>
+	<td>deleteAllVisibleCookies</td>
+	<td></td>
+	<td></td>
+</tr>
+<!--MP-->
+<tr>
+	<td>open</td>
+	<td>http://registration.meupatrocinio.com/</td>
+	<td></td>
+</tr>
+<!--Accept term-->
+<tr>
+	<td>click</td>
+	<td>id=agree</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=agree_btn</td>
+	<td></td>
+</tr>
+<!--Crie sua conta-->
+<tr>
+	<td>type</td>
+	<td>id=email</td>
+	<td>hewerthon.teste${year}${month}${day}${hours}${min}${seg}@mailinator.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=re_email</td>
+	<td>hewerthon.teste${year}${month}${day}${hours}${min}${seg}@mailinator.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password</td>
+	<td>123456</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=re_password</td>
+	<td>123456</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=nascimento</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=9</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=sex</td>
+	<td>label=Feminino</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//input[@name='extended[what]'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=match_sex[]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=select_one</td>
+	<td>label=Televisão</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[3]</td>
+	<td></td>
+</tr>
+<!--Confirmar Profile Type-->
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[5]</td>
+	<td></td>
+</tr>
+<!--Sobre Você-->
+<tr>
+	<td>select</td>
+	<td>id=state_id</td>
+	<td>label=Sao Paulo</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=city_id</td>
+	<td>label=São Paulo</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=height1</td>
+	<td>label=170 cm</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=body_type</td>
+	<td>label=Magro</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=ethnicity</td>
+	<td>label=Branco / Caucasiano</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=hair_color</td>
+	<td>label=Castanho</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=eye_color</td>
+	<td>label=Castanho Claro</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=smoke</td>
+	<td>label=Nunca</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=drink</td>
+	<td>label=Socialmente</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=relationship</td>
+	<td>label=Solteiro(a)</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=have_children</td>
+	<td>label=Não</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=education</td>
+	<td>label=Superior completo</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=occupation</td>
+	<td>label=Consultor</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[7]</td>
+	<td></td>
+</tr>
+<!--O seu perfil-->
+<tr>
+	<td>type</td>
+	<td>id=username</td>
+	<td>Teste${year}${month}${day}${hours}${min}${seg}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=headline</td>
+	<td>Teste MP 😀 =-) :-) Três pessoas que não ia beber e vai no fut hj não rola 😂😎😂ttttttt</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=general_description</td>
+	<td>Teste MP 😀 =-) :-) Três pessoas que não ia beber e vai no fut hj não rola 😂😎😎😄😁😋😂😂😎😄😄😋😂😎😎😄 Três pessoas que não ia beber e vai no fut hj não rola 😂😎😎😄😁😋😂😂😎😄😄😋😂😎😎😄 Três pessoas que não ia beber e vai no fut hj não rola 😂😎😎😄😁😋😂😂😎😄😄😋😂😎😎😄 Três pessoas que não ia beber e vai no fut hj não rola 😂😎😎😄😁😋😂😂😎😄😄😋😂😎😎😄 Três pessoas que não ia beber e vai no fut hj não rola 😂😎😎😄😁😋😂😂😎😄😄😋😂😎😎😄</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=happy_to_travel</td>
+	<td>label=Mundo Inteiro</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=lifestyle_budget</td>
+	<td>label=Negociável</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=description</td>
+	<td>Teste MP 😀 =-) :-) Três pessoas que não ia beber e vai no fut hj não rola 😂😎😎😄😁😋😂😂😎😄😄😋😂😎😎😄 Três pessoas que não ia beber e vai no fut hj não rola 😂😎😎😄😁😋😂😂😎😄😄😋😂😎😎😄 Três pessoas que não ia beber e vai no fut hj não rola 😂😎😎😄😁😋😂😂😎😄😄😋😂😎😎😄 Três pessoas que não ia beber e vai no fut hj não rola 😂😎😎😄😁😋😂😂😎😄😄😋😂😎😎😄 Três pessoas que não ia beber e vai no fut hj não rola 😂😎😎😄😁😋😂😂😎😄😄😋😂😎😎😄</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[9]</td>
+	<td></td>
+</tr>
+<!--Carregar Foto-->
+<tr>
+	<td>type</td>
+	<td>id=one</td>
+	<td>C:\Users\\Desktop\Google Drive\Meu Patrocinio\Atividades\Fotos\rio.jpg</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=two</td>
+	<td>C:\Users\Desktop\Google Drive\Meu Patrocinio\Atividades\Fotos\Foto 6000x.jpg</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=three</td>
+	<td>C:\Users\Desktop\Google Drive\Meu Patrocinio\Atividades\Fotos\IMG_20170525_173647.jpg</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>8000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[11]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>10000</td>
+	<td></td>
+</tr>
+<!--End While-->
+<tr>
+	<td>store</td>
+	<td>javascript{storedVars.MyVar++;}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>endWhile</td>
+	<td></td>
+	<td></td>
+</tr>
+<!--More options photos-->
+<tr>
+	<td>type</td>
+	<td>id=one</td>
+	<td>C:\Users\\Desktop\Google Drive\Meu Patrocinio\Atividades\Fotos\Foto 5000x.jpg</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=two</td>
+	<td>C:\Users\Desktop\Google Drive\Meu Patrocinio\Atividades\Fotos\Foto 5000x.jpg</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=three</td>
+	<td>C:\Users\Desktop\Google Drive\Meu Patrocinio\Atividades\Fotos\Foto 5000x.jpg</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>8000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[11]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=one</td>
+	<td>C:\Users\\Desktop\Google Drive\Meu Patrocinio\Atividades\Fotos\Foto 5000x.jpg</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=two</td>
+	<td>C:\Users\Desktop\Google Drive\Meu Patrocinio\Atividades\Fotos\Foto 5000x.jpg</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=three</td>
+	<td>C:\Users\Desktop\Google Drive\Meu Patrocinio\Atividades\Fotos\Foto 5000x.jpg</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>8000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=one</td>
+	<td>C:\Users\\Desktop\Google Drive\Meu Patrocinio\Atividades\Fotos\Artistas\Mulheres\Lily_Collins.jpg</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=two</td>
+	<td>C:\Users\Desktop\Google Drive\Meu Patrocinio\Atividades\Fotos\Artistas\Mulheres\Mulher-4.jpg</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=three</td>
+	<td>C:\Users\Desktop\Google Drive\Meu Patrocinio\Atividades\Fotos\Artistas\Mulheres\Beyonce.jpg</td>
+</tr>
+<!--Verifica sucesso-->
+<tr>
+	<td>waitForVisible</td>
+	<td>css=div.col-md-8.col-centered &gt; h4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=div.resend-email &gt; div &gt; h4</td>
+	<td></td>
+</tr>
+<!--Open Mailinator-->
+<tr>
+	<td>openWindow</td>
+	<td>https://www.mailinator.com/</td>
+	<td></td>
+</tr>
+<!--Mailinator-->
+<tr>
+	<td>waitForVisible</td>
+	<td>css=button.btn.btn-dark</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=inboxfield</td>
+	<td>hewerthon.teste${year}${month}${day}${hours}${min}${seg}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-dark</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>xpath=(//button[@type='button'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>6000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=div.innermail.ng-binding</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.innermail.ng-binding</td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,34 @@
+import junit.framework.Test;
+import junit.framework.TestSuite;
+
+public class Sign {
+
+  public static Test suite() {
+    TestSuite suite = new TestSuite();
+    suite.addTestSuite(ProfileHopping.class);
+    suite.addTestSuite(Chat-Upload.class);
+    suite.addTestSuite(Send Msg ADM Beta.class);
+    suite.addTestSuite(Send Msg.class);
+    suite.addTestSuite(Sign-SB-F-H.class);
+    suite.addTestSuite(Sign-SB-F-HM.class);
+    suite.addTestSuite(Sign-SB-F-M.class);
+    suite.addTestSuite(Sign-SB-M-H.class);
+    suite.addTestSuite(Sign-SB-M-HM.class);
+    suite.addTestSuite(Sign-SB-M-M.class);
+    suite.addTestSuite(Sign-SD-H.class);
+    suite.addTestSuite(Sign-SD-M.class);
+    suite.addTestSuite(Sign-SD-MH.class);
+    suite.addTestSuite(Sign-SM-H.class);
+    suite.addTestSuite(Sign-SM-M.class);
+    suite.addTestSuite(Sign-SM-MH.class);
+    suite.addTestSuite(Delete Fotos.class);
+    suite.addTestSuite(Finance.class);
+    suite.addTestSuite(Testes de comandos.class);
+    suite.addTestSuite(Delete MSG.class);
+    return suite;
+  }
+
+  public static void main(String[] args) {
+    junit.textui.TestRunner.run(suite());
+  }
+}

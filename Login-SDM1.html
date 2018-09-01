@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://dating.meupatrocinio.com/" />
+<title>Login-SDM1</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Login-SDM1</td></tr>
+</thead><tbody>
+<!--Variables section-->
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); day = data.getDate();</td>
+	<td>day</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); mes = data.getMonth()+1;</td>
+	<td>month</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); ano = data.getFullYear();</td>
+	<td>year</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); hora = data.getHours();</td>
+	<td>hours</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); min = data.getMinutes();</td>
+	<td>min</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>data = new Date(); seg = data.getSeconds();</td>
+	<td>seg</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${day}-${month}-${year}-${hours}-${min}-${seg}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>C:\Users\Hewerthon\Google Drive\Meu Patrocinio\Automatizacao\MeuPatronicio\Evidencias\ProfileHopping\</td>
+	<td>evidencePath</td>
+</tr>
+<!--Abrir site-->
+<tr>
+	<td>open</td>
+	<td>https://dating.meupatrocinio.com/member/sign_in.php</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=form_2-login</td>
+	<td>SDM1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=form_2-password</td>
+	<td>mp2016</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=form_2-remember_me</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=form_2-process-button</td>
+	<td></td>
+</tr>
+<!--Verifico login-->
+<tr>
+	<td>waitForTitle</td>
+	<td>Membros Destacados</td>
+	<td></td>
+</tr>
+<!--Termina sessão-->
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.promenu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Terminar Sessão</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
